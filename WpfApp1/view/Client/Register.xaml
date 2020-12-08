@@ -1,0 +1,175 @@
+﻿<Window x:Class="WpfApp1.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Icon="/Assets/beauty_logo.ico"
+        WindowStartupLocation="CenterScreen"
+        Title="Регистрация" ResizeMode="NoResize" Height="590" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="34*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="496*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3">
+            <Border.Background>
+                <LinearGradientBrush SpreadMethod="Reflect" StartPoint="0,0" EndPoint="1,1 ">
+                    <GradientStop Color="#fdcbf1" Offset="0"></GradientStop>
+                    <GradientStop Color="#e6dee9" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+
+            <DockPanel Margin="0,13,0,0">
+                <TextBlock DockPanel.Dock="Top"
+                           Text="Имя"
+                           ></TextBlock>
+
+                <TextBox 
+                     HorizontalContentAlignment="Left"
+                    x:Name="name_box"  Style="{DynamicResource TextBoxBrush}">
+
+                </TextBox>
+            </DockPanel>
+
+            <DockPanel Margin="0,13,0,0">
+                <TextBlock DockPanel.Dock="Top"
+                           Text="Фамилия" 
+                           ></TextBlock>
+
+                <TextBox 
+                     HorizontalContentAlignment="Left"
+                      Style="{DynamicResource TextBoxBrush}"
+                     x:Name="family_box" BorderBrush="Black">
+
+                </TextBox>
+            </DockPanel>
+
+            <DockPanel Margin="0,13,0,0">
+                <TextBlock DockPanel.Dock="Top"
+                           Text="Отчество" 
+                           ></TextBlock>
+
+                <TextBox 
+                     HorizontalContentAlignment="Left"
+                      Style="{DynamicResource TextBoxBrush}"
+                     x:Name="patron_box" BorderBrush="Black">
+
+                </TextBox>
+            </DockPanel>
+
+            <DockPanel Margin="0,13,0,0">
+                <TextBlock DockPanel.Dock="Top"
+                           Text="Телефон"
+                           ></TextBlock>
+
+                <TextBox 
+                     HorizontalContentAlignment="Left"
+                  x:Name="phone_box"   Style="{DynamicResource TextBoxBrush}">
+
+                </TextBox>
+            </DockPanel>
+
+
+            <DockPanel Margin="0,13,0,0">
+                <TextBlock DockPanel.Dock="Top"
+                           Text="Дата рождения"
+                          ></TextBlock>
+
+                <TextBox 
+                     HorizontalContentAlignment="Left"
+                     x:Name="birthaday_box" Style="{DynamicResource TextBoxBrush}">
+
+                </TextBox>
+            </DockPanel>
+
+
+            <DockPanel Margin="0,13,0,0">
+                <TextBlock DockPanel.Dock="Top"
+                           Text="Email"
+                          ></TextBlock>
+
+                <TextBox 
+                     HorizontalContentAlignment="Left"
+                    x:Name="email_box"  Style="{DynamicResource TextBoxBrush}">
+
+                </TextBox>
+            </DockPanel>
+
+
+            <DockPanel Margin="0,13,0,0">
+                <TextBlock DockPanel.Dock="Top"
+                           Text="Выберите пол"
+                          ></TextBlock>
+                <ComboBox x:Name="gender_code" FontFamily="Helvetica" FontWeight="Light" FontSize="20"
+                          Opacity="0.6">
+                    <ComboBoxItem>Мужской</ComboBoxItem>
+                    <ComboBoxItem>Женский</ComboBoxItem>
+                </ComboBox>
+            </DockPanel>
+
+
+            <DockPanel Margin="0,13,0,0">
+                <TextBlock Text="Пароль" 
+                           DockPanel.Dock="Top"
+                           ></TextBlock>
+
+                <PasswordBox 
+                     Height="25"
+                     HorizontalAlignment="Stretch" 
+                     FontFamily="Helvetica"
+                     FontWeight="Light"
+                     FontSize="20" 
+                     Password="Password"
+                     BorderThickness="0"
+                     Opacity="0.7" x:Name="passwordbox_one">
+                </PasswordBox>
+            </DockPanel>
+
+            <DockPanel Margin="0,13,0,0">
+                <TextBlock
+                    DockPanel.Dock="Top" 
+                    Text="Повторите пароль" 
+                    Margin="0, 0,10,0"
+                   ></TextBlock>
+
+                <PasswordBox 
+                     HorizontalAlignment="Stretch" 
+                     Password="Password"
+                     Height="25"
+                     FontFamily="Helvetica"
+                     FontWeight="Light"
+                     FontSize="20" 
+                     BorderThickness="0"
+                     Opacity="0.7"  x:Name="passwordbox_two">
+
+                </PasswordBox>
+            </DockPanel>
+
+
+            <DockPanel  Margin="0,10,0,0">
+
+                <Button Margin="20,0,0,0" 
+                        DockPanel.Dock="Left" 
+                        Width="100" Height="40"
+                        Content="REGISTER" Background="Transparent" x:Name="Click_Regiter" Click="Click_Regiter_Click"/>
+
+                <Button  DockPanel.Dock="Right" 
+                         Width="100" Height="40"
+                         Content="LOGIN" Click="Button_Click" Background="Transparent"/>
+            </DockPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

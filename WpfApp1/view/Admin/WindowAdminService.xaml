@@ -1,0 +1,101 @@
+﻿<Window x:Class="WpfApp1.view.Admin.WindowAdminService"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.view"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Icon="/Assets/beauty_logo.ico" MinHeight="400" MinWidth="700"
+        Title="Панель админа" Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="163*"/>
+            <ColumnDefinition Width="436*"/>
+            <ColumnDefinition Width="193*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="324*"/>
+            <RowDefinition Height="24*"/>
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="-10,10,10,-10" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="156.96"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+            <Border.Background>
+                <LinearGradientBrush SpreadMethod="Reflect" StartPoint="0,0" EndPoint="1,1 ">
+                    <GradientStop Color="#f5f7fa" Offset="0"></GradientStop>
+                    <GradientStop Color="#a6c1ee" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+
+        <Border BorderBrush="#b2b6c2" BorderThickness="2">
+            <DockPanel Margin="3,4,5,0" Height="57" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Ellipse Width="40" Height="40" DockPanel.Dock="Top">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Assets/faun.png" Stretch="UniformToFill"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock HorizontalAlignment="Center">Admin</TextBlock>
+            </DockPanel>
+        </Border>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <TextBlock FontFamily="/Font/#Hanging Letters" 
+                       FontSize="61"
+                       ><Run Text="Edit Service"/></TextBlock>
+        </StackPanel>
+
+        <Border Grid.Column="0" Grid.Row="1" BorderBrush="#b2b6c2" BorderThickness="2">
+            <DockPanel LastChildFill="False">
+                <Button DockPanel.Dock="Top"  Height="50" Background="Transparent" Click="go_add">Добавить</Button>
+                <Button DockPanel.Dock="Top"  Height="50" Background="Transparent" Click="go_delete">Удалить</Button>
+                <Button DockPanel.Dock="Top"  Height="50" Background="Transparent" Click="go_edit">Редактировать</Button>
+                <Button DockPanel.Dock="Top"  Height="50" Background="Transparent" Click="go_main">Главная</Button>
+                <Button DockPanel.Dock="Top"  Height="50" Background="Transparent" Click="go_change">Сменить пользователя</Button>
+                <Button DockPanel.Dock="Top"  Height="50" Background="Transparent" Click="go_exit">Выход</Button>
+            </DockPanel>
+
+        </Border>
+
+        <ScrollViewer Name="scroll" CanContentScroll="True"  Grid.Column="1"
+                      Grid.Row="1" Grid.ColumnSpan="2">
+
+            <DockPanel Grid.Column="1" Grid.Row="1"  >
+                <ListBox x:Name="servicelist" SelectionChanged="servicelist_SelectionChanged" DockPanel.Dock="Top" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border BorderBrush="#b2b6c2" BorderThickness="2" Width="603">
+                                <DockPanel>
+                                    <Image DockPanel.Dock="Left" Width="83"  Source="{Binding Path=MainImagePath}"/>
+                                    <TextBlock DockPanel.Dock="Top" Text="{Binding Path=Title}"></TextBlock>
+                                    <TextBlock DockPanel.Dock="Top" x:Name="price"  Text="{Binding Path=Cost}"></TextBlock>
+                                    <TextBlock DockPanel.Dock="Top" x:Name="block_skidka" Text="{Binding Path=Discount}"></TextBlock>
+                                </DockPanel>
+                            </Border>
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+
+            </DockPanel>
+
+        </ScrollViewer>
+    </Grid>
+
+</Window>
